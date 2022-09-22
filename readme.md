@@ -1,0 +1,1 @@
+server for scandiweb shop
