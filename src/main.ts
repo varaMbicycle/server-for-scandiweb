@@ -1,14 +1,16 @@
-import { ApolloServer } from "apollo-server-express"
-import express from 'express'
+import { ApolloServer } from 'apollo-server';
 
 import typeDefs from './schema';
 import resolvers from './resolvers';
 
-const app = express()
 const server = new ApolloServer({
     typeDefs: typeDefs,
     resolvers: resolvers,
+    cors: {
+        origin: '*'
+    },
 });
 
-server.applyMiddleware({app, cors: false})
-app.listen(80, () => console.log('server stated on port: 80'))
+server.listen().then(({ url }) => {
+    console.log(`🚀  Server ready at ${url}`);
+});
