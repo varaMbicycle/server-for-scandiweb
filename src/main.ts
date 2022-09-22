@@ -7,7 +7,7 @@ const server = new ApolloServer({
     typeDefs: typeDefs,
     resolvers: resolvers,
     cors: {
-        origin: '*'
+        origin: ["https://test-store-scandiweb.herokuapp.com/"]
     },
 });
 
