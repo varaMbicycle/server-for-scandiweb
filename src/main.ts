@@ -6,9 +6,7 @@ import resolvers from './resolvers';
 const server = new ApolloServer({
     typeDefs: typeDefs,
     resolvers: resolvers,
-    cors: {
-        origin: '*'
-    },
+    cors: false,
 });
 
 server.listen().then(({ url }) => {
